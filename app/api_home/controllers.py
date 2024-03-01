@@ -62,5 +62,10 @@ def getAlertCount():
         
     resp = app.make_response((jsonify(total_count), 200))
     return resp
+@bp_home.route(Constants.endpoint_home_getdata, methods=[Constants.GET])
+def getdata():
+    
+    return "api is working without db connections"
+
 
     

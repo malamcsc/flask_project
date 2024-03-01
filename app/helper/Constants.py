@@ -18,6 +18,7 @@ class Constants:
    
     endpoint_home_getAlert = "/v1.0/alert"
     endpoint_home_getAlertCount = "/v1.0/alert_count"
+    endpoint_home_getdata = "/v1.0/data"
     
     
     
