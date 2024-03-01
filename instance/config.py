@@ -4,13 +4,15 @@ import os
 
 # Statement for enabling the development environment
 
-POSTGRES_USER = os.environ.get("POSTGRES_USER","flask_user")
-POSTGRES_PW = os.environ.get("POSTGRES_PW","flask")
-POSTGRES_URL = os.environ.get("POSTGRES_URL","localhost:5433")
-#POSTGRES_URL = os.environ.get("POSTGRES_URL","172.30.144.1:5433")
-POSTGRES_DB = os.environ.get("POSTGRES_DB","flaskdb")
+DB_USER = os.environ.get("DB_USER","postgres")
+DB_PASS = os.environ.get("DB_PASS","root@123")
+#POSTGRES_URL = os.environ.get("POSTGRES_URL","localhost:5433")
+INSTANCE_HOST = os.environ.get("INSTANCE_HOST","localhost")
+DB_NAME = os.environ.get("DB_NAME","flaskdb")
+DB_PORT = os.environ.get("DB_PORT","5433")
 
-DB_URL = 'postgresql://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER,pw=POSTGRES_PW,url=POSTGRES_URL,db=POSTGRES_DB)
+DB_URL = 'postgresql://{user}:{pw}@{host}:{port}/{db}'.format(user=DB_USER,pw=DB_PASS,host=INSTANCE_HOST,port =DB_PORT, db=DB_NAME)
+print(DB_URL)
 
 SQLALCHEMY_DATABASE_URI = DB_URL
 
