@@ -17,7 +17,7 @@ pipeline {
         stage('Login to ECR') {
             steps {
                 script {
-                    withAWS(role: 'docker-ecr-service-role', roleAccount: '925860042597') {
+                    withAWS(role: 'docker-ecr-service-role', roleAccount: '925860042597', credentials: 'docker-k8s-user-cred') {
                         sh 'aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $ECR_REGISTRY'
                     }
                 }
