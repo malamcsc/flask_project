@@ -3,7 +3,7 @@ pipeline {
     environment {
         AWS_DEFAULT_REGION = 'eu-north-1'
         ECR_REGISTRY = '925860042597.dkr.ecr.eu-north-1.amazonaws.com'
-        ECR_REPOSITORY = 'flask-dockere-ecr'
+        ECR_REPOSITORY = 'flask-docker-ecr'
         IMAGE_TAG = "${env.BUILD_ID}"
         AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY') 
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_KEY')
